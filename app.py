@@ -5,6 +5,8 @@ from io import BytesIO
 
 # Load the species dataset
 df = pd.read_csv("species_data.csv")
+df.columns = df.columns.str.strip()
+
 
 st.title("🌳 Tree CO₂ Sequestration Estimator")
 
