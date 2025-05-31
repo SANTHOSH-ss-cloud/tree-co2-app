@@ -8,7 +8,7 @@ df = pd.read_csv("species_data.csv")
 
 st.title("🌳 Tree CO₂ Sequestration Estimator")
 
-species = st.selectbox("Choose a Tree Species", df["Common Name"])
+species = st.selectbox("Choose a Tree Species", df["Common_Name"])
 years = st.slider("Select Time Period (years)", 1, 50, 20)
 num_trees = st.number_input("Enter Number of Trees", min_value=1, value=100)
 
