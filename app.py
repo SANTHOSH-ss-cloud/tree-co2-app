@@ -8,11 +8,11 @@ df = pd.read_csv("species_data.csv")
 
 st.title("🌳 Tree CO₂ Sequestration Estimator")
 
-species = st.selectbox("Choose a Tree Species", df["Common_Name"])
+species = st.selectbox("Choose a Tree Species", df["Common_name"])
 years = st.slider("Select Time Period (years)", 1, 50, 20)
 num_trees = st.number_input("Enter Number of Trees", min_value=1, value=100)
 
-tree_data = df[df["Common Name"] == species].iloc[0]
+tree_data = df[df["Common_name"] == species].iloc[0]
 
 # Constants and calculation
 growth_rate = tree_data["Avg. DBH Growth (cm/year)"]
