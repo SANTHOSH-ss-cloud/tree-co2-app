@@ -69,17 +69,6 @@ st.download_button(
     mime="application/pdf"
 )
 
-# 📈 Plot 1: Carbon Captured vs Number of Trees
-st.subheader("Carbon Sequestration vs Number of Trees")
-tree_range = list(range(1, 1001, 50))
-co2_values = [calculate_co2(growth_rate, carbon_fraction, survival_rate, years, n) for n in tree_range]
-
-fig1, ax1 = plt.subplots()
-ax1.plot(tree_range, co2_values, color='green')
-ax1.set_xlabel("Number of Trees")
-ax1.set_ylabel("CO2 Sequestered (metric tons)")
-ax1.set_title("CO2 Sequestration vs Number of Trees")
-st.pyplot(fig1)
 
 # 📊 Plot 2: Compare Trees by CO2 Sequestration
 st.subheader("Compare CO2 Sequestration Across Tree Species")
@@ -97,7 +86,6 @@ for _, row in df.iterrows():
 
 compare_df = pd.DataFrame(compare_data).sort_values(by="CO2 (tons)", ascending=False)
 
-fig2, ax2 = plt.subplots(figsize=(10, 6))
 sns.barplot(data=compare_df, x="CO2 (tons)", y="Species", palette="YlGn")
 ax2.set_title(f"Total CO2 Sequestration Over {years} Years for {num_trees} Trees")
 st.pyplot(fig2)
