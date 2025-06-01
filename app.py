@@ -61,7 +61,7 @@ graph_image = create_graph_for_selected_tree()
 
 # Show in Streamlit
 st.subheader(f"📈 CO₂ Sequestered Over Time for {species} ({num_trees} trees)")
-st.image(graph_image, use_column_width=True)
+st.image(graph_image, use_container_width=True)
 
 # PDF remains unchanged — it will now embed this corrected graph
 
