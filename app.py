@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Load species dataset
 df = pd.read_csv("species_data.csv")
-df.columns = df.columns.str.strip()
+df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
 st.title("🌳 Tree CO₂ Sequestration Estimator")
 
@@ -35,19 +35,19 @@ total_co2_tons = calculate_co2(growth_rate, carbon_fraction, survival_rate, year
 
 st.success(f"🌱 Estimated CO₂ Sequestration: {total_co2_tons:.2f} metric tons over {years} years.")
 
-# PDF Report Generator
+# PDF Report Generator (with safe text only - no emoji)
 def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", "B", 16)
-    pdf.cell(200, 10, "Tree CO₂ Sequestration Report", ln=True, align='C')
+    pdf.cell(200, 10, "Tree CO2 Sequestration Report", ln=True, align='C')
     
     pdf.set_font("Arial", "", 12)
     pdf.ln(10)
     pdf.cell(200, 10, f"Species: {species}", ln=True)
     pdf.cell(200, 10, f"Years: {years}", ln=True)
     pdf.cell(200, 10, f"Number of Trees: {num_trees}", ln=True)
-    pdf.cell(200, 10, f"Estimated CO₂ Sequestered: {total_co2_tons:.2f} metric tons", ln=True)
+    pdf.cell(200, 10, f"Estimated CO2 Sequestered: {total_co2_tons:.2f} metric tons", ln=True)
 
     pdf.ln(10)
     pdf.cell(200, 10, "Model Details:", ln=True)
@@ -56,8 +56,7 @@ def generate_pdf():
     pdf.cell(200, 10, f"- Survival Rate: {survival_rate}", ln=True)
 
     pdf_output = BytesIO()
-    pdf_bytes = pdf.output(dest='S').encode('latin1')
-    pdf_output.write(pdf_bytes)
+    pdf.output(pdf_output)
     pdf_output.seek(0)
     return pdf_output
 
