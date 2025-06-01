@@ -38,7 +38,7 @@ def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", "B", 16)
-    pdf.cell(200, 10, "Tree CO₂ Sequestration Report", ln=True, align='C')
+    pdf.cell(200, 10, "Tree CO2 Sequestration Report", ln=True, align='C')
     
     pdf.set_font("Arial", "", 12)
     pdf.ln(10)
