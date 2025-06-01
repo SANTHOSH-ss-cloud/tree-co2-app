@@ -17,9 +17,10 @@ num_trees = st.number_input("Enter Number of Trees", min_value=1, value=100)
 tree_data = df[df["common_name"] == species].iloc[0]
 
 # Constants and calculation
-growth_rate = tree_data["Avg. DBH Growth (cm/year)"]
-carbon_fraction = tree_data["Carbon Fraction"]
-survival_rate = tree_data["Survival Rate"]
+growth_rate = tree_data["avg_dbh_growth"]
+carbon_fraction = tree_data["carbon_fraction"]
+survival_rate = tree_data["survival_rate"]
+
 
 # Simple model: CO2 sequestered = biomass * carbon_fraction * survival_rate * 3.67 (C to CO2)
 # Biomass is approximated from DBH growth
