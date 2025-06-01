@@ -87,5 +87,5 @@ for _, row in df.iterrows():
 compare_df = pd.DataFrame(compare_data).sort_values(by="CO2 (tons)", ascending=False)
 
 sns.barplot(data=compare_df, x="CO2 (tons)", y="Species", palette="YlGn")
-ax2.set_title(f"Total CO2 Sequestration Over {years} Years for {num_trees} Trees")
+plt.title(f"Total CO2 Sequestration Over {years} Years for {num_trees} Trees")
 st.pyplot(fig2)
