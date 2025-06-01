@@ -88,4 +88,4 @@ compare_df = pd.DataFrame(compare_data).sort_values(by="CO2 (tons)", ascending=F
 
 sns.barplot(data=compare_df, x="CO2 (tons)", y="Species", palette="YlGn")
 plt.title(f"Total CO2 Sequestration Over {years} Years for {num_trees} Trees")
-st.pyplot(fig2)
+plt.show()
