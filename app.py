@@ -6,7 +6,6 @@ from io import BytesIO
 # Load the species dataset
 df = pd.read_csv("species_data.csv")
 df.columns = df.columns.str.strip()
-growth_rate = tree_data["Avg. DBH Growth (cm/year)"]
 
 
 st.title("🌳 Tree CO₂ Sequestration Estimator")
