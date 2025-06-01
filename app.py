@@ -3,26 +3,25 @@ import pandas as pd
 from fpdf import FPDF
 from io import BytesIO
 import matplotlib.pyplot as plt
-import seaborn as sns
 
-# Load dataset
+# Load species dataset
 df = pd.read_csv("species_data.csv")
 df.columns = df.columns.str.strip()
 
-st.title("Tree CO2 Sequestration Estimator")
+st.title("🌳 Tree CO₂ Sequestration Estimator")
 
-# User input
+# User Inputs
 species = st.selectbox("Choose a Tree Species", df["common_name"])
 years = st.slider("Select Time Period (years)", 1, 50, 20)
 num_trees = st.number_input("Enter Number of Trees", min_value=1, value=100)
 
-# Fetch selected tree data
+# Retrieve selected species data
 tree_data = df[df["common_name"] == species].iloc[0]
 growth_rate = tree_data["avg_dbh_growth"]
 carbon_fraction = tree_data["carbon_fraction"]
 survival_rate = tree_data["survival_rate"]
 
-# Calculation model
+# CO₂ Calculation Function
 def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees=1):
     avg_dbh = growth_rate * years
     biomass_kg = 0.25 * (avg_dbh ** 2) * years
@@ -31,23 +30,24 @@ def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees=
     total_kg = co2_kg * num_trees * survival_rate
     return total_kg / 1000  # metric tons
 
+# Estimate CO₂
 total_co2_tons = calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees)
 
-st.success(f"Estimated CO2 Sequestration: {total_co2_tons:.2f} metric tons over {years} years.")
+st.success(f"🌱 Estimated CO₂ Sequestration: {total_co2_tons:.2f} metric tons over {years} years.")
 
 # PDF Report Generator
 def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", "B", 16)
-    pdf.cell(200, 10, "Tree CO2 Sequestration Report", ln=True, align='C')
-
+    pdf.cell(200, 10, "Tree CO₂ Sequestration Report", ln=True, align='C')
+    
     pdf.set_font("Arial", "", 12)
     pdf.ln(10)
     pdf.cell(200, 10, f"Species: {species}", ln=True)
     pdf.cell(200, 10, f"Years: {years}", ln=True)
     pdf.cell(200, 10, f"Number of Trees: {num_trees}", ln=True)
-    pdf.cell(200, 10, f"Estimated CO2 Sequestered: {total_co2_tons:.2f} metric tons", ln=True)
+    pdf.cell(200, 10, f"Estimated CO₂ Sequestered: {total_co2_tons:.2f} metric tons", ln=True)
 
     pdf.ln(10)
     pdf.cell(200, 10, "Model Details:", ln=True)
@@ -61,31 +61,26 @@ def generate_pdf():
     pdf_output.seek(0)
     return pdf_output
 
+# PDF Download Button
 pdf_file = generate_pdf()
 st.download_button(
-    label="Download Report as PDF",
+    label="📄 Download Report as PDF",
     data=pdf_file,
     file_name=f"{species.replace(' ', '_')}_CO2_Report.pdf",
     mime="application/pdf"
 )
 
+# 📈 Show Graph: CO2 Sequestered vs Number of Trees
+st.subheader(f"📈 CO₂ Sequestered vs Number of Trees for {species} over {years} years")
 
-# 📊 Plot 2: Compare Trees by CO2 Sequestration
-st.subheader("Compare CO2 Sequestration Across Tree Species")
+x_vals = list(range(1, 1001, 50))
+y_vals = [calculate_co2(growth_rate, carbon_fraction, survival_rate, years, n) for n in x_vals]
 
-compare_data = []
-for _, row in df.iterrows():
-    co2 = calculate_co2(
-        row["avg_dbh_growth"],
-        row["carbon_fraction"],
-        row["survival_rate"],
-        years,
-        num_trees
-    )
-    compare_data.append({"Species": row["common_name"], "CO2 (tons)": co2})
+fig, ax = plt.subplots()
+ax.plot(x_vals, y_vals, marker='o', color='forestgreen')
+ax.set_xlabel("Number of Trees")
+ax.set_ylabel("CO₂ Sequestered (metric tons)")
+ax.set_title(f"{species} - CO₂ Sequestration over {years} years")
+ax.grid(True)
 
-compare_df = pd.DataFrame(compare_data).sort_values(by="CO2 (tons)", ascending=False)
-
-sns.barplot(data=compare_df, x="CO2 (tons)", y="Species", palette="YlGn")
-plt.title(f"Total CO2 Sequestration Over {years} Years for {num_trees} Trees")
-plt.show()
+st.pyplot(fig)
