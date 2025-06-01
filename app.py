@@ -64,7 +64,7 @@ st.subheader(f"📈 CO₂ Sequestered Over Time for {species} ({num_trees} trees
 st.image(graph_image, use_column_width=True)
 
 # PDF remains unchanged — it will now embed this corrected graph
-pdf_data = generate_pdf_with_graph(graph_image)
+
 
 
 # PDF generator with graph
