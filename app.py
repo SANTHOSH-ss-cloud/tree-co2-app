@@ -36,7 +36,6 @@ total_co2_tons = calculate_co2(growth_rate, carbon_fraction, survival_rate, year
 st.success(f"🌱 Estimated CO₂ Sequestration: {total_co2_tons:.2f} metric tons over {years} years.")
 
 # Generate graph
-# Updated graph: CO₂ vs Years for selected tree and number of trees
 def create_graph_for_selected_tree():
     x_vals = list(range(1, years + 1))
     y_vals = [calculate_co2(growth_rate, carbon_fraction, survival_rate, yr, num_trees) for yr in x_vals]
@@ -54,18 +53,10 @@ def create_graph_for_selected_tree():
     plt.close(fig)
     return img_buffer
 
-
-# Graph display in Streamlit
-# Replace graph_image creation
+# Create and show graph
 graph_image = create_graph_for_selected_tree()
-
-# Show in Streamlit
 st.subheader(f"📈 CO₂ Sequestered Over Time for {species} ({num_trees} trees)")
 st.image(graph_image, use_container_width=True)
-
-# PDF remains unchanged — it will now embed this corrected graph
-
-
 
 # PDF generator with graph
 def generate_pdf_with_graph(graph_image):
