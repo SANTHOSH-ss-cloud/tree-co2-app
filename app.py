@@ -85,9 +85,9 @@ def generate_pdf_with_graph(graph_image):
     pdf.image(image_path, x=10, w=180)
     os.remove(image_path)  # Clean up
 
-    output = BytesIO()
-    pdf.output(output)
-    output.seek(0)
+    # Output PDF to BytesIO
+    pdf_output = pdf.output(dest='S').encode('latin1')
+    output = BytesIO(pdf_output)
     return output
 
 # PDF download button
