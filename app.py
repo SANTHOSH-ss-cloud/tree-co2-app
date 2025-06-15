@@ -85,8 +85,9 @@ def generate_pdf_with_graph(graph_image):
     pdf.image(image_path, x=10, w=180)
     os.remove(image_path)  # Clean up
 
-    # Output PDF to BytesIO
-    pdf_output = pdf.output(dest='S').encode('latin1')
+    # Output PDF to BytesIO (fixing previous error)
+    pdf_data_raw = pdf.output(dest='S')
+    pdf_output = pdf_data_raw.encode('latin1') if isinstance(pdf_data_raw, str) else pdf_data_raw
     output = BytesIO(pdf_output)
     return output
 
