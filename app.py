@@ -12,7 +12,12 @@ df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 st.title("🌳 Tree CO2 Sequestration Comparator")
 
 # User Inputs
-city = st.selectbox("Select Your City", sorted(df["city"].dropna().unique()))
+indian_cities = [
+    "Delhi", "Mumbai", "Bengaluru", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Pune", "Jaipur", "Lucknow",
+    "Kanpur", "Nagpur", "Indore", "Bhopal", "Patna", "Vadodara", "Ludhiana", "Agra", "Nashik", "Faridabad",
+    "Meerut", "Rajkot", "Kalyan", "Vasai", "Varanasi", "Srinagar", "Ranchi", "Amritsar", "Jodhpur", "Coimbatore"
+]
+city = st.selectbox("Select Your City (India Only)", indian_cities)
 user_tree_name = st.text_input("Give a Nickname for Your Tree", "My Green Tree")
 user_species = st.selectbox("Choose a Tree Species", sorted(df["common_name"].dropna().unique()))
 years = st.slider("Select Number of Years", 1, 50, 20)
