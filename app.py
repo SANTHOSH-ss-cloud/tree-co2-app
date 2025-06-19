@@ -20,7 +20,6 @@ num_trees = st.number_input("Number of Trees", min_value=1, value=10)
 
 # Get user-selected tree data
 user_data = df[df["common_name"] == user_species].iloc[0]
-user_co2 = 0
 
 def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees):
     dbh = growth_rate * years
@@ -35,10 +34,8 @@ user_co2 = calculate_co2(
 
 st.success(f"🌱 Estimated CO₂ for {user_species}: **{user_co2:.2f} metric tons** over {years} years.")
 
-# AI Suggestion: Best average DBH in city
-# AI Suggestion: Find best tree in same city with higher CO2
+# AI Suggestion: Find best tree in city with higher CO2 than user tree
 ai_df = df[(df["city"] == city) & (df["common_name"] != user_species)].dropna(subset=["avg_dbh_growth", "carbon_fraction", "survival_rate"])
-
 ai_df["estimated_co2"] = ai_df.apply(lambda row: calculate_co2(
     row["avg_dbh_growth"], row["carbon_fraction"], row["survival_rate"], years, num_trees
 ), axis=1)
@@ -54,12 +51,13 @@ else:
     ai_species = None
     ai_co2 = 0
     st.warning("🤖 No better species found by AI for this city.")
+
 # Bar Chart Comparison
 def plot_chart(user_co2, ai_co2):
     fig, ax = plt.subplots()
     ax.bar(["User Tree", "AI Tree"], [user_co2, ai_co2], color=["green", "blue"])
-    ax.set_ylabel("CO₂ Sequestered (metric tons)")
-    ax.set_title("User vs AI Tree CO₂ Comparison")
+    ax.set_ylabel("CO2 Sequestered (metric tons)")
+    ax.set_title("User vs AI Tree CO2 Comparison")
     buffer = BytesIO()
     fig.savefig(buffer, format='png')
     buffer.seek(0)
@@ -69,21 +67,20 @@ def plot_chart(user_co2, ai_co2):
 chart_img = plot_chart(user_co2, ai_co2)
 st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
 
-# PDF Report Generator
-# PDF Report Generator (Unicode fixed and AI smarter)
+# PDF Report Generator (no emojis or Unicode)
 def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", "B", 16)
-    pdf.cell(190, 10, "Tree CO2 Comparison Report", ln=True, align="C")  # Replace CO₂ with CO2 here
+    pdf.cell(190, 10, "Tree CO2 Comparison Report", ln=True, align="C")
 
     pdf.set_font("Arial", "", 12)
     pdf.ln(10)
     pdf.cell(190, 10, f"City: {city}", ln=True)
-    pdf.cell(190, 10, f"Your Tree: {user_species} (Nickname: {user_tree_name})", ln=True)
+    pdf.cell(190, 10, f"User Tree: {user_species} (Nickname: {user_tree_name})", ln=True)
     pdf.cell(190, 10, f"Estimated CO2: {user_co2:.2f} metric tons", ln=True)
 
-    if ai_species is not None and ai_co2 > user_co2:
+    if ai_species is not None:
         pdf.cell(190, 10, f"AI Suggested Tree: {ai_species['common_name']}", ln=True)
         pdf.cell(190, 10, f"Estimated CO2: {ai_co2:.2f} metric tons", ln=True)
     else:
@@ -96,7 +93,7 @@ def generate_pdf():
     os.remove(image_path)
 
     out_buffer = BytesIO()
-    out_buffer.write(pdf.output(dest='S').encode('latin1'))  # Fix Unicode bug here
+    out_buffer.write(pdf.output(dest='S').encode('latin1'))  # Ensures no Unicode errors
     out_buffer.seek(0)
     return out_buffer
 
