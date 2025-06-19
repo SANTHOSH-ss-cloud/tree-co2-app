@@ -5,21 +5,18 @@ from fpdf import FPDF
 from io import BytesIO
 import os
 
-# Load cleaned dataset
+# Load dataset
 df = pd.read_csv("filtered_india_tree_data.csv")
 df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
-st.title("🌳 Tree CO2 Sequestration Comparator")
-
-# Limit to 30 major Indian cities
+# Hardcoded list of 30 major Indian cities
 indian_cities = [
     "Delhi", "Mumbai", "Bengaluru", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Pune", "Jaipur", "Lucknow",
     "Kanpur", "Nagpur", "Indore", "Bhopal", "Patna", "Vadodara", "Ludhiana", "Agra", "Nashik", "Faridabad",
     "Meerut", "Rajkot", "Kalyan", "Vasai", "Varanasi", "Srinagar", "Ranchi", "Amritsar", "Jodhpur", "Coimbatore"
 ]
-city = st.selectbox("Select Your City (India Only)", indian_cities)
 
-# Limit to 70 Indian tree species
+# Hardcoded list of 70 Indian tree species
 indian_tree_species = [
     "Neem", "Peepal", "Banyan", "Ashoka", "Gulmohar", "Teak", "Sal", "Sandalwood", "Arjun", "Jamun",
     "Amla", "Mango", "Jackfruit", "Tamarind", "Eucalyptus", "Mahogany", "Kachnar", "Kadamba", "Palash", "Semal",
@@ -29,19 +26,23 @@ indian_tree_species = [
     "Sapodilla", "Mulberry", "Litchi", "Avocado", "Alstonia", "Chikoo", "Putranjiva", "Chinaberry", "Rosewood", "Cassia",
     "Kanchan", "Devil Tree", "Tendu", "Siris", "Chandan", "Shisham", "Pipal", "Mast Tree", "Indian Beech", "Gmelina"
 ]
-user_species = st.selectbox("Choose a Tree Species (India Only)", sorted(indian_tree_species))
+
+# Filter dataset by valid Indian cities and species
+df = df[df["city"].isin(indian_cities) & df["common_name"].isin(indian_tree_species)]
+
+st.title("🌳 Tree CO2 Sequestration Comparator (India)")
+
+# Dropdowns (now filtered)
+city = st.selectbox("Select Your City (India Only)", sorted(df["city"].unique()))
+available_species = sorted(df[df["city"] == city]["common_name"].unique())
+user_species = st.selectbox("Choose a Tree Species (India Only)", available_species)
 
 user_tree_name = st.text_input("Give a Nickname for Your Tree", "My Green Tree")
 years = st.slider("Select Number of Years", 1, 50, 20)
 num_trees = st.number_input("Number of Trees", min_value=1, value=10)
 
-# Check if selected species is in dataset
-species_df = df[df["common_name"].str.lower() == user_species.lower()]
-if species_df.empty:
-    st.error("This species is not available in your dataset. Please choose another one.")
-    st.stop()
-
-user_data = species_df.iloc[0]
+# Get user-selected tree data
+user_data = df[(df["city"] == city) & (df["common_name"] == user_species)].iloc[0]
 
 def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees):
     dbh = growth_rate * years
@@ -56,8 +57,8 @@ user_co2 = calculate_co2(
 
 st.success(f"Estimated CO2 for {user_species}: {user_co2:.2f} metric tons over {years} years.")
 
-# AI Suggestion (better tree only)
-ai_df = df[(df["city"] == city) & (df["common_name"].str.lower() != user_species.lower())].dropna(
+# AI Suggestion (better trees only)
+ai_df = df[(df["city"] == city) & (df["common_name"] != user_species)].dropna(
     subset=["avg_dbh_growth", "carbon_fraction", "survival_rate"]
 )
 ai_df["estimated_co2"] = ai_df.apply(lambda row: calculate_co2(
@@ -90,7 +91,7 @@ def plot_chart(user_co2, ai_co2):
 chart_img = plot_chart(user_co2, ai_co2)
 st.image(chart_img, caption="User vs AI Tree CO2", use_container_width=True)
 
-# PDF Generator (no Unicode issues)
+# PDF Generator
 def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
