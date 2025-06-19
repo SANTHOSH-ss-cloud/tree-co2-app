@@ -7,6 +7,10 @@ import os
 import tempfile
 
 try:
+    # Print current working directory for debugging font paths
+    print(f"Current Working Directory: {os.getcwd()}")
+    print(f"Files in current directory: {os.listdir(os.getcwd())}")
+
     # Load filtered dataset
     df = pd.read_csv("strict_filtered_species_data.csv")
     df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
@@ -91,12 +95,19 @@ try:
     # PDF generation
     def generate_pdf():
         pdf = FPDF()
-        # Add a Unicode font (e.g., DejaVuSans)
-        # Ensure DejaVuSans.ttf is in the same directory as your script, or provide the full path
-        pdf.add_font('DejaVuSans', '', 'DejaVuSans.ttf', uni=True)
-        pdf.set_font("DejaVuSans", "B", 16) # Use DejaVuSans for bold titles
+        # Define absolute paths for font files
+        current_dir = os.getcwd()
+        font_path_regular = os.path.join(current_dir, 'DejaVuSans.ttf')
+        font_path_bold = os.path.join(current_dir, 'DejaVuSans-Bold.ttf')
+
+        # Add DejaVuSans regular font
+        pdf.add_font('DejaVuSans', '', font_path_regular, uni=True)
+        # Add DejaVuSans bold font
+        pdf.add_font('DejaVuSans', 'B', font_path_bold, uni=True)
+
+        pdf.set_font("DejaVuSans", "B", 16) # Use DejaVuSans bold for titles
         pdf.cell(190, 10, "Tree CO₂ Comparison Report", ln=True, align='C')
-        pdf.set_font("DejaVuSans", "", 12) # Use DejaVuSans for regular text
+        pdf.set_font("DejaVuSans", "", 12) # Use DejaVuSans regular for text
         pdf.ln(10)
         pdf.cell(190, 10, f"📍 City: {city}", ln=True)
         pdf.cell(190, 10, f"🌿 Your Tree: {species} (Nickname: {nickname})", ln=True)
