@@ -27,7 +27,7 @@ try:
         "Meerut", "Rajkot", "Kalyan", "Vasai", "Varanasi", "Srinagar", "Ranchi", "Amritsar", "Jodhpur", "Coimbatore"
     ]
 
-    # 70 Indian tree species
+    # Dynamically get tree species from your CSV
     indian_tree_species = sorted(df["common_name"].unique())
 
     # UI
@@ -103,10 +103,10 @@ try:
         font_path_regular = os.path.join(current_dir, 'DejaVuSans.ttf')
         font_path_bold = os.path.join(current_dir, 'DejaVuSans-Bold.ttf')
 
-        # Add DejaVuSans regular font
+        # Add DejaVuSans regular font for Unicode support
         # Ensure DejaVuSans.ttf is in the same directory as your script
         pdf.add_font('DejaVuSans', '', font_path_regular, uni=True)
-        # Add DejaVuSans bold font
+        # Add DejaVuSans bold font for Unicode support
         # Ensure DejaVuSans-Bold.ttf is in the same directory as your script
         pdf.add_font('DejaVuSans', 'B', font_path_bold, uni=True)
 
@@ -134,7 +134,7 @@ try:
         finally:
             os.remove(image_path) # Clean up the temporary file
         output = BytesIO()
-        # Corrected line: pdf.output(dest="S") already returns bytes (bytearray), no need to encode
+        # pdf.output(dest="S") returns bytes (bytearray), no need to encode
         output.write(pdf.output(dest="S"))
         output.seek(0)
         return output
