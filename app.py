@@ -95,6 +95,9 @@ try:
     # PDF generation
     def generate_pdf():
         pdf = FPDF()
+        # Add a page immediately after creating the PDF object
+        pdf.add_page()
+
         # Define absolute paths for font files
         current_dir = os.getcwd()
         font_path_regular = os.path.join(current_dir, 'DejaVuSans.ttf')
