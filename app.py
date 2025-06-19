@@ -19,7 +19,16 @@ indian_cities = [
 ]
 city = st.selectbox("Select Your City (India Only)", indian_cities)
 user_tree_name = st.text_input("Give a Nickname for Your Tree", "My Green Tree")
-user_species = st.selectbox("Choose a Tree Species", sorted(df["common_name"].dropna().unique()))
+indian_tree_species = [
+    "Neem", "Peepal", "Banyan", "Ashoka", "Gulmohar", "Teak", "Sal", "Sandalwood", "Arjun", "Jamun",
+    "Amla", "Mango", "Jackfruit", "Tamarind", "Eucalyptus", "Mahogany", "Kachnar", "Kadamba", "Palash", "Semal",
+    "Khejri", "Champa", "Bael", "Bakul", "Ber", "Imli", "Babool", "Subabul", "Custard Apple", "Drumstick",
+    "Indian Cork", "Indian Laburnum", "Shirish", "Rudraksha", "Harsingar", "Kari Patta", "Beheda", "Bel", "Pongamia", "Flame of the Forest",
+    "Raintree", "Silver Oak", "Bottlebrush", "Casuarina", "Indian Gooseberry", "Guava", "Fig", "Indian Almond", "Indian Coral Tree", "Papaya",
+    "Sapodilla", "Mulberry", "Litchi", "Avocado", "Alstonia", "Chikoo", "Putranjiva", "Chinaberry", "Custard Apple", "Rosewood",
+    "Cassia", "Kanchan", "Devil Tree", "Tendu", "Siris", "Chandan", "Bakul", "Shisham", "Pipal", "Mast Tree"
+]
+user_species = st.selectbox("Choose a Tree Species (India Only)", sorted(indian_tree_species))
 years = st.slider("Select Number of Years", 1, 50, 20)
 num_trees = st.number_input("Number of Trees", min_value=1, value=10)
 
