@@ -1,0 +1,459 @@
+scientific_name,common_name,city,state,latitude_coordinate,longitude_coordinate,diameter_breast_height_cm,height_m,native,avg_dbh_growth,carbon_fraction,survival_rate
+Ficus benjamina,Weeping Fig,San Jose,California,37.38417646,-121.8665667,5.08,16.4042,introduced,1.9,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.37848962,-121.8718556,10.16,49.2126,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39619265,-121.8832147,33.02,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.396298,-121.8832439,35.56,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39554058,-121.8831669,38.1,114.8294,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.43017177,-121.9687089,17.78,32.8084,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.43018885,-121.9686829,17.78,32.8084,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.35941105,-121.914083,33.02,82.021,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.35861266,-121.9083358,20.32,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35863612,-121.9083515,17.78,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35865552,-121.9083652,27.94,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35869427,-121.9083955,25.4,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35418453,-121.8995809,55.88,98.4252,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.39395995,-121.8872465,17.78,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39384176,-121.8871022,22.86,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.393751,-121.8870377,25.4,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39366219,-121.8869896,20.32,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39356018,-121.8869549,20.32,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39347133,-121.8869096,27.94,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39339138,-121.8868507,27.94,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39330289,-121.8867781,27.94,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39313668,-121.8866411,25.4,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39304813,-121.8865712,25.4,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39297041,-121.8865069,20.32,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39288839,-121.8864398,27.94,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39280433,-121.886359,17.78,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39271144,-121.886289,22.86,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39264243,-121.8862276,25.4,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3925518,-121.8861495,22.86,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39248052,-121.8860935,22.86,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3923964,-121.8860209,20.32,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39232299,-121.8859622,20.32,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3922344,-121.885895,22.86,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39216114,-121.8858226,12.7,49.2126,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39197326,-121.885677,25.4,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39188483,-121.8855962,20.32,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39181158,-121.8855238,22.86,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39173173,-121.8854567,22.86,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3916521,-121.8853706,25.4,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39160945,-121.8852906,22.86,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.40343458,-121.8936886,30.48,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.403422,-121.8935652,27.94,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.40340804,-121.893322,25.4,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.40339785,-121.8932338,33.02,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.40338796,-121.8931209,20.32,98.4252,introduced,1.8,0.46,0.86
+Ficus benjamina,Weeping Fig,San Jose,California,37.28787878,-121.8444999,5.08,32.8084,introduced,1.9,0.45,0.87
+Ficus benjamina,Weeping Fig,San Jose,California,37.28785452,-121.844538,5.08,32.8084,introduced,1.9,0.45,0.87
+Ficus benjamina,Weeping Fig,San Jose,California,37.28780755,-121.8446039,7.62,32.8084,introduced,1.9,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.28419966,-121.8369275,5.08,32.8084,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.28418071,-121.8369718,5.08,49.2126,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.29221755,-121.8367336,127.0,98.4252,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.27877367,-121.8252076,30.48,82.021,introduced,2.0,0.45,0.87
+Ficus benjamina,Weeping Fig,San Jose,California,37.34106837,-121.8322953,0.0,32.8084,introduced,1.9,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34877514,-121.8823091,33.02,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.34875549,-121.8781421,25.4,98.4252,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34933189,-121.8785663,38.1,98.4252,introduced,2.0,0.45,0.87
+Ficus elastica,Rubber Fig,San Jose,California,37.32431436,-121.8826903,10.16,49.2126,introduced,2.1,0.47,0.89
+Ficus benjamina,Weeping Fig,San Jose,California,37.31986325,-121.885102,5.08,16.4042,introduced,1.9,0.45,0.87
+Ficus benjamina,Weeping Fig,San Jose,California,37.31974111,-121.8853559,5.08,16.4042,introduced,1.9,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34082852,-121.8356004,35.56,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.34171398,-121.8368843,7.62,49.2126,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.33628962,-121.8384606,38.1,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.3363337,-121.8385033,50.8,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.33730428,-121.8388967,45.72,49.2126,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.33774635,-121.8382031,15.24,49.2126,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33400154,-121.8375171,35.56,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3679565,-121.8611528,50.8,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36556023,-121.8604178,53.34,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36548653,-121.8605215,45.72,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36505953,-121.8611951,53.34,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36500952,-121.8612516,45.72,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36469987,-121.8611539,55.88,32.8084,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3646146,-121.8610801,55.88,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36452889,-121.8609933,43.18,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3644581,-121.8611254,55.88,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36453631,-121.8612063,40.64,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36459981,-121.8618276,45.72,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36377008,-121.8604697,71.12,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36404655,-121.8600643,45.72,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36481059,-121.8595398,53.34,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36558543,-121.8600878,60.96,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.365503,-121.8600043,40.64,32.8084,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36533325,-121.8598353,40.64,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36356494,-121.8605171,76.2,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36352231,-121.8606679,60.96,114.8294,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.31945057,-121.9376516,20.32,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.3476562,-121.8392357,12.7,49.2126,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.3574257,-121.8650691,35.56,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3417038,-121.8581002,35.56,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.34179107,-121.8581829,33.02,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.34193249,-121.8583303,33.02,82.021,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34145129,-121.859388,40.64,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.32894889,-121.8792886,17.78,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.32334879,-121.8794565,15.24,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.32340166,-121.879495,20.32,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.32497287,-121.8792552,76.2,114.8294,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.32491596,-121.8792081,68.58,32.8084,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.32485744,-121.8791667,68.58,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.34856881,-121.8339629,50.8,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35227158,-121.8292529,101.6,114.8294,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35171784,-121.8286986,22.86,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.347774,-121.8588854,60.96,65.6168,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.29558972,-121.8391183,53.34,49.2126,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.2956313,-121.8390589,48.26,49.2126,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.28526616,-121.8268929,106.68,131.2336,introduced,2.0,0.45,0.87
+Ficus macrophylla,Moreton Bay Fig,San Jose,California,37.34603505,-121.8196569,22.86,26.24672,introduced,2.2,0.47,0.9
+Melia azedarach,Persian Lilac,San Jose,California,37.34753505,-121.8145069,58.42,72.17848,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.34695505,-121.8215369,48.26,72.17848,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.31592505,-121.7967069,63.5,134.51444,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31600505,-121.7968469,114.3,114.8294,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.31501505,-121.8020969,66.04,82.021,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.31638505,-121.7973569,60.96,150.91864,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31644505,-121.7974169,48.26,144.35696,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31659505,-121.7976369,45.72,91.86352,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31666505,-121.7977169,58.42,118.11024,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31675505,-121.7978969,48.26,137.79528,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31722505,-121.7987669,45.72,101.70604,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31726505,-121.7988769,45.72,88.58268,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31735505,-121.7991369,55.88,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31744505,-121.7995169,50.8,108.26772,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31749505,-121.7997069,40.64,134.51444,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31752505,-121.7998069,48.26,108.26772,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31758505,-121.8000769,53.34,101.70604,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31761505,-121.8001869,43.18,104.98688,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31767505,-121.8004169,50.8,111.54856,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34438505,-121.8176269,30.48,39.37008,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.34435505,-121.8175969,45.72,49.2126,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.31670506,-121.9138569,17.78,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31665506,-121.9125969,17.78,49.2126,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33152505,-121.8420769,12.7,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33364505,-121.8510869,7.62,32.8084,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.35495678,-121.8690913,81.28,75.45932,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35501505,-121.8688869,101.6,72.17848,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35499545,-121.8691207,63.5,95.14436,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35506505,-121.8689769,71.12,65.6168,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34876505,-121.8823369,30.48,85.30184,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34931505,-121.8811669,2.54,39.37008,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34876505,-121.8781469,22.86,78.74016,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.34867505,-121.8780869,33.02,91.86352,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.36158505,-121.8874669,15.24,59.05512,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.40592505,-121.8759769,58.42,101.70604,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.34964505,-121.8432469,45.72,65.6168,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33122506,-121.9424169,17.78,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33122506,-121.9422869,12.7,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33123506,-121.9422269,15.24,62.33596,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33124506,-121.9421769,15.24,72.17848,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33124506,-121.9421169,17.78,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.41856504,-121.8671069,17.78,78.74016,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.41853504,-121.8670969,12.7,62.33596,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.41851504,-121.8670869,17.78,91.86352,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33032506,-121.9444369,20.32,72.17848,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39569505,-121.8573469,38.1,104.98688,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39477505,-121.8576369,63.5,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39487505,-121.8574469,63.5,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39494505,-121.8572669,53.34,98.4252,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34025505,-121.8262569,40.64,72.17848,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.34170505,-121.8282969,5.08,22.96588,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.32949506,-121.9480869,25.4,95.14436,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32785506,-121.9443369,60.96,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32775506,-121.9442269,12.7,72.17848,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32747506,-121.9452369,25.4,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32891506,-121.9451369,22.86,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.39778505,-121.8595169,25.4,75.45932,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33324506,-121.9319669,38.1,72.17848,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33317506,-121.9318369,33.02,78.74016,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33312506,-121.9317969,33.02,78.74016,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33395505,-121.8440869,35.56,111.54856,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32888505,-121.8379869,25.4,82.021,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.33493505,-121.8432769,68.58,95.14436,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.33014505,-121.8361069,20.32,22.96588,introduced,2.0,0.45,0.87
+Ficus macrophylla,Moreton Bay Fig,San Jose,California,37.33380505,-121.8406469,12.7,29.52756,introduced,2.2,0.47,0.9
+Melia azedarach,Persian Lilac,San Jose,California,37.35172505,-121.8287069,50.8,55.77428,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.35711505,-121.8376669,45.72,55.77428,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.25993506,-121.8986369,10.16,62.33596,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33465505,-121.8300769,17.78,78.74016,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33907505,-121.8341469,12.7,55.77428,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.32988505,-121.8054869,15.24,78.74016,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.31664506,-121.9128769,22.86,52.49344,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33648505,-121.8318069,7.62,45.93176,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.28238506,-121.9071069,81.28,121.39108,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33375505,-121.8511669,10.16,65.6168,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.33108505,-121.8031169,17.78,68.89764,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.33119505,-121.8025469,22.86,78.74016,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.33122505,-121.8023169,15.24,49.2126,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33473505,-121.8301269,15.24,72.17848,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.33123505,-121.8030569,40.64,111.54856,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33900505,-121.8340769,17.78,55.77428,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.33047505,-121.8055369,20.32,75.45932,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33391505,-121.8513169,22.86,68.89764,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30944506,-121.9423069,12.7,62.33596,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.33113505,-121.8035969,27.94,88.58268,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33380505,-121.8512169,25.4,72.17848,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.33184505,-121.8036069,20.32,45.93176,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33965505,-121.8347069,33.02,88.58268,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33357505,-121.8509869,38.1,127.95276,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34764505,-121.8392569,30.48,39.37008,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.33297505,-121.8501669,17.78,68.89764,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33385505,-121.8512869,33.02,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31665506,-121.9124969,17.78,49.2126,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.35051505,-121.8348569,38.1,62.33596,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.31663506,-121.9129769,17.78,59.05512,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31664506,-121.9127169,17.78,52.49344,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30946506,-121.9421769,10.16,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31664506,-121.9134269,22.86,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31664506,-121.9131969,22.86,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33922505,-121.8342869,33.02,88.58268,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31664506,-121.9132969,22.86,65.6168,introduced,1.8,0.46,0.86
+Ficus macrophylla,Moreton Bay Fig,San Jose,California,37.33504505,-121.8332069,35.56,29.52756,introduced,2.2,0.47,0.9
+Celtis australis,European Nettle Tree,San Jose,California,37.33653505,-121.8316669,25.4,91.86352,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.33347505,-121.8508969,12.7,82.021,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34931505,-121.8785669,129.54,75.45932,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34858505,-121.8781569,33.02,91.86352,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.34877505,-121.8823269,30.48,88.58268,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34929505,-121.8812369,2.54,39.37008,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34140505,-121.9163969,25.4,68.89764,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.26370506,-121.8953969,7.62,78.74016,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.32471505,-121.9000369,5.08,39.37008,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31665506,-121.9136369,20.32,59.05512,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31666506,-121.9137669,20.32,59.05512,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31664506,-121.9135469,22.86,62.33596,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34952505,-121.8431169,53.34,68.89764,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.32668505,-121.8371369,12.7,39.37008,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.25706506,-121.9116669,20.32,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32827506,-121.8936169,38.1,98.4252,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.28282506,-121.8892669,2.54,36.08924,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.28290506,-121.8893269,12.7,55.77428,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.28232506,-121.8876369,17.78,95.14436,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.28024506,-121.8911869,40.64,127.95276,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.27988506,-121.8925069,15.24,104.98688,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.28006506,-121.8924469,38.1,127.95276,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.26357506,-121.9271269,22.86,124.67192,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.28236506,-121.8954469,33.02,101.70604,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26677506,-121.9057769,12.7,52.49344,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.24849506,-121.9181269,17.78,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.25248506,-121.9166369,20.32,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.25656506,-121.9247169,10.16,32.8084,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.29874506,-121.8878769,53.34,167.32284,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32996505,-121.8248669,7.62,42.65092,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.23765506,-121.8999069,2.54,36.08924,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.40506505,-121.8658569,55.88,101.70604,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.40487505,-121.8659169,63.5,118.11024,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.30327505,-121.7985069,10.16,45.93176,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.34303505,-121.8193169,91.44,65.6168,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.23312506,-121.8379769,10.16,75.45932,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.23225506,-121.8389069,5.08,36.08924,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.23222506,-121.8389069,2.54,29.52756,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.23218506,-121.8388969,2.54,29.52756,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.23212506,-121.8388769,2.54,29.52756,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34269506,-121.9076069,106.68,111.54856,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34596505,-121.8886169,38.1,85.30184,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.21747506,-121.8683169,12.7,68.89764,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.25449506,-121.8534269,53.34,114.8294,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.25450506,-121.8533869,66.04,114.8294,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.24213506,-121.8336069,17.78,91.86352,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.23855506,-121.8432769,25.4,85.30184,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.22885506,-121.8893569,12.7,26.24672,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.22881506,-121.8893669,101.6,52.49344,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.26339506,-121.8993769,35.56,104.98688,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26528506,-121.9002369,2.54,32.8084,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.31542982,-121.8932531,124.46,147.6378,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.31516247,-121.8944031,57.15,147.6378,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.31004786,-121.8887081,52.07,164.042,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2828167,-121.981406,40.64,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30435478,-121.9552716,55.88,114.8294,introduced,1.8,0.46,0.86
+Ficus elastica,Rubber Fig,San Jose,California,37.29558771,-121.8821673,60.96,164.042,introduced,2.1,0.47,0.89
+Celtis australis,European Nettle Tree,San Jose,California,37.29294308,-122.0007563,52.07,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.29294408,-122.0006782,38.1,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.29291985,-122.0005851,41.91,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.29577195,-122.0186772,15.24,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2956159,-122.0186691,60.96,164.042,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.29569103,-121.9844333,10.16,49.2126,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30413726,-122.0073254,26.67,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.28785151,-121.8804349,53.34,164.042,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.28684613,-121.8798822,45.72,131.2336,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.24085756,-121.8240969,30.48,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.27116332,-121.8704218,71.12,131.2336,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.2300072,-121.8288552,101.6,147.6378,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.23058165,-121.8274443,99.06,147.6378,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.23196198,-121.8304005,67.31,98.4252,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.21032012,-121.8580594,41.91,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2103161,-121.8581668,44.45,114.8294,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.24397484,-121.8164427,22.86,65.6168,introduced,2.0,0.45,0.87
+Leucaena leucocephala,Subabul,San Jose,California,37.24521599,-121.8099663,7.62,49.2126,introduced,2.5,0.45,0.91
+Celtis australis,European Nettle Tree,San Jose,California,37.26798619,-121.8412122,45.72,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26798563,-121.8414854,72.39,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26798162,-121.8416107,60.96,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26798642,-121.8418647,57.15,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26798498,-121.84199,55.88,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2679795,-121.8422438,52.07,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26797564,-121.8423562,67.31,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26797028,-121.8426004,63.5,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26797394,-121.842729,73.66,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26797205,-121.8431179,71.12,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26769106,-121.8436528,53.34,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2674703,-121.8436392,49.53,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26711926,-121.8431155,54.61,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26712591,-121.8429838,57.15,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26712361,-121.8427363,68.58,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26713026,-121.8426046,50.8,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26712565,-121.8423346,54.61,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26712184,-121.8422188,64.77,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26713242,-121.8419683,60.96,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26713374,-121.8418526,73.66,164.042,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26713427,-121.8415826,53.34,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26714058,-121.8414799,58.42,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26713047,-121.8412419,63.5,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26725414,-121.8412087,52.07,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26725354,-121.8414851,52.07,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26725743,-121.8415945,60.96,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26725445,-121.8418548,66.04,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26725305,-121.8419769,62.23,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26724496,-121.8422339,53.34,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2672487,-121.8423561,54.61,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26724576,-121.8426131,49.53,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26724443,-121.8427288,45.72,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26724137,-121.8429955,46.99,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26724525,-121.8431049,55.88,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26724271,-121.8433266,63.5,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26734627,-121.8434795,62.23,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2674618,-121.8434848,64.77,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26773653,-121.8434962,55.88,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2678459,-121.8433663,60.96,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2678487,-121.8431221,74.93,180.4462,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26785018,-121.8429936,73.66,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26786212,-121.8426242,77.47,180.4462,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26786439,-121.8419782,45.72,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26786813,-121.8418754,53.34,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26786319,-121.8416343,59.69,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26787006,-121.8414833,45.72,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26786262,-121.8412357,46.99,114.8294,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.228443,-121.8129891,46.99,98.4252,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.23411463,-121.7987869,55.88,147.6378,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.22460884,-121.7817852,38.1,82.021,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.22529016,-121.783838,81.28,164.042,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.22520426,-121.7839128,58.42,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.22490442,-121.7841243,73.66,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2246881,-121.7842347,68.58,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.22460553,-121.7842701,66.04,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.22441242,-121.7842998,66.04,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.22402923,-121.7842678,50.8,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.22385294,-121.7842445,44.45,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2237132,-121.7842193,76.2,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.22350258,-121.7841801,71.12,164.042,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.21817455,-121.7625478,13.97,65.6168,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.34631682,-121.8621957,39.37,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.34635141,-121.8621147,49.53,98.4252,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34363564,-121.8659185,58.42,0.0,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.358927,-121.8091671,46.99,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.35921058,-121.8088094,39.37,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37547719,-121.8671137,35.56,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37556911,-121.8669559,82.55,164.042,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37591667,-121.8664092,78.74,164.042,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37606948,-121.8665333,73.66,164.042,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37587319,-121.8667583,57.15,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37581599,-121.8668349,57.15,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3756865,-121.8670286,68.58,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37558444,-121.8671862,80.01,196.8504,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37754207,-121.8683399,78.74,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37772363,-121.8684154,71.12,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37738747,-121.8687804,83.82,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37729336,-121.8688676,62.23,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37711347,-121.8690372,60.96,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37661414,-121.8695171,40.64,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37651607,-121.8696483,36.83,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37653272,-121.8694033,44.45,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37658442,-121.8693454,40.64,131.2336,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.39117633,-121.8373916,27.94,98.4252,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.37411253,-121.8497029,21.59,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37407654,-121.8497506,25.4,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37405144,-121.8497887,34.29,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37401367,-121.8498576,31.75,0.0,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37395888,-121.8499319,27.94,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37392145,-121.8499698,30.48,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37388836,-121.8500329,33.02,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3738649,-121.8500634,24.13,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37384425,-121.8501171,26.67,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37381143,-121.8501571,27.94,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37377698,-121.8502047,16.51,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37374876,-121.8502467,21.59,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37370801,-121.8503058,31.75,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37367963,-121.8503613,30.48,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37363748,-121.8504088,34.29,114.8294,introduced,1.8,0.46,0.86
+Leucaena leucocephala,Subabul,San Jose,California,37.38199803,-121.8309718,12.7,32.8084,introduced,2.5,0.45,0.91
+Celtis australis,European Nettle Tree,San Jose,California,37.37944238,-121.8480946,27.94,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.37622058,-121.8694385,20.32,98.4252,introduced,1.8,0.46,0.86
+Ficus microcarpa,Chinese Banyan,San Jose,California,37.3286343,-121.7834779,22.86,49.2126,introduced,2.0,0.46,0.88
+Celtis australis,European Nettle Tree,San Jose,California,37.32693985,-121.7734769,53.34,111.54856,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.32642015,-121.7742369,43.18,85.30184,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31675685,-121.7852069,36.322,104.98688,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31681395,-121.7853769,49.53,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.35538919,-121.7984804,43.942,104.98688,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.34932355,-121.8011869,53.34,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.30396132,-121.8016517,50.8,98.4252,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.3032827,-121.7985172,24.13,82.021,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.30223712,-121.8022304,8.89,49.2126,introduced,2.0,0.45,0.87
+Ficus macrophylla,Moreton Bay Fig,San Jose,California,37.31143022,-121.8301811,33.02,65.6168,introduced,2.2,0.47,0.9
+Caryota urens,Fishtail Palm,San Jose,California,37.28324336,-121.743197,17.78,49.2126,introduced,1.7,0.45,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.31094229,-121.8353372,15.24,82.021,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.31109414,-121.7934986,10.16,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31203064,-121.7952264,48.26,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31204023,-121.7951149,57.15,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31184834,-121.7947488,55.88,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31197751,-121.794781,66.04,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30153824,-121.7995154,39.37,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30152987,-121.7993821,40.64,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30106269,-121.7991298,35.56,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30006492,-121.7988781,40.64,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2998356,-121.7988556,44.45,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.29944304,-121.7987594,39.37,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30046431,-121.7988018,35.56,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30111348,-121.7988387,2.54,32.8084,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30584411,-121.7959117,43.18,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30580496,-121.7957703,39.37,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30545056,-121.7953855,49.53,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30483064,-121.7949052,35.56,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30644463,-121.8350564,90.17,196.8504,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30626873,-121.8350236,63.5,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30570165,-121.7968728,38.1,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30554121,-121.7954284,45.72,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30466781,-121.7949909,36.83,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30457733,-121.7949336,38.1,98.4252,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.30486717,-121.7949325,34.29,82.021,introduced,1.8,0.46,0.86
+Leucaena leucocephala,Subabul,San Jose,California,37.30156678,-121.8033963,15.24,65.6168,introduced,2.5,0.45,0.91
+Leucaena leucocephala,Subabul,San Jose,California,37.30267204,-121.8094024,13.97,82.021,introduced,2.5,0.45,0.91
+Leucaena leucocephala,Subabul,San Jose,California,37.30168112,-121.8112054,7.62,114.8294,introduced,2.5,0.45,0.91
+Leucaena leucocephala,Subabul,San Jose,California,37.29951707,-121.8121616,24.13,65.6168,introduced,2.5,0.45,0.91
+Celtis australis,European Nettle Tree,San Jose,California,37.31245502,-121.7931206,71.12,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.31224295,-121.7942998,60.96,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.3122466,-121.7958233,66.04,131.2336,introduced,1.8,0.46,0.86
+Leucaena leucocephala,Subabul,San Jose,California,37.26243383,-121.7990819,15.24,49.2126,introduced,2.5,0.45,0.91
+Celtis australis,European Nettle Tree,San Jose,California,37.28423039,-121.8189575,69.85,147.6378,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.28082627,-121.8203243,81.28,131.2336,introduced,2.0,0.45,0.87
+Celtis australis,European Nettle Tree,San Jose,California,37.25169324,-121.7904466,66.04,147.6378,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.25123502,-121.7909075,73.66,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.25266778,-121.7902778,53.34,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.25264735,-121.7903936,58.42,114.8294,introduced,1.8,0.46,0.86
+Leucaena leucocephala,Subabul,San Jose,California,37.27667299,-121.8165437,16.51,82.021,introduced,2.5,0.45,0.91
+Leucaena leucocephala,Subabul,San Jose,California,37.27921206,-121.8158035,20.32,65.6168,introduced,2.5,0.45,0.91
+Celtis australis,European Nettle Tree,San Jose,California,37.26406962,-121.7995876,48.26,114.8294,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.26407116,-121.7996447,49.53,131.2336,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27426107,-121.8072755,45.72,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2747013,-121.807835,45.72,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27469764,-121.80802,33.02,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27552948,-121.8083763,17.78,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27495559,-121.8086237,27.94,49.2126,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27469975,-121.8086253,40.64,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27455134,-121.8083454,25.4,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27455717,-121.8081151,33.02,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27455234,-121.8079641,20.32,65.6168,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27359223,-121.8083192,22.86,82.021,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.27324068,-121.8083242,20.32,49.2126,introduced,1.8,0.46,0.86
+Celtis australis,European Nettle Tree,San Jose,California,37.2733392,-121.8083259,19.05,65.6168,introduced,1.8,0.46,0.86
+Melia azedarach,Persian Lilac,San Jose,California,37.27270314,-121.8051788,27.94,65.6168,introduced,2.0,0.45,0.87
+Leucaena leucocephala,Subabul,San Jose,California,37.27508805,-121.8111653,5.08,49.2126,introduced,2.5,0.45,0.91
+Melia azedarach,Persian Lilac,San Jose,California,37.26935816,-121.8037352,99.06,131.2336,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.26926096,-121.8035961,50.8,114.8294,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.33807511,-121.7895174,30.48,68.89764,introduced,2.0,0.45,0.87
+Melia azedarach,Persian Lilac,San Jose,California,37.34365089,-121.8659226,35.56,,introduced,2.0,0.45,0.87
