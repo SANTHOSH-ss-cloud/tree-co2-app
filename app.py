@@ -11,36 +11,44 @@ df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
 st.title("🌳 Tree CO2 Sequestration Comparator")
 
-# User Inputs
+# Limit to 30 major Indian cities
 indian_cities = [
     "Delhi", "Mumbai", "Bengaluru", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Pune", "Jaipur", "Lucknow",
     "Kanpur", "Nagpur", "Indore", "Bhopal", "Patna", "Vadodara", "Ludhiana", "Agra", "Nashik", "Faridabad",
     "Meerut", "Rajkot", "Kalyan", "Vasai", "Varanasi", "Srinagar", "Ranchi", "Amritsar", "Jodhpur", "Coimbatore"
 ]
 city = st.selectbox("Select Your City (India Only)", indian_cities)
-user_tree_name = st.text_input("Give a Nickname for Your Tree", "My Green Tree")
+
+# Limit to 70 Indian tree species
 indian_tree_species = [
     "Neem", "Peepal", "Banyan", "Ashoka", "Gulmohar", "Teak", "Sal", "Sandalwood", "Arjun", "Jamun",
     "Amla", "Mango", "Jackfruit", "Tamarind", "Eucalyptus", "Mahogany", "Kachnar", "Kadamba", "Palash", "Semal",
     "Khejri", "Champa", "Bael", "Bakul", "Ber", "Imli", "Babool", "Subabul", "Custard Apple", "Drumstick",
     "Indian Cork", "Indian Laburnum", "Shirish", "Rudraksha", "Harsingar", "Kari Patta", "Beheda", "Bel", "Pongamia", "Flame of the Forest",
     "Raintree", "Silver Oak", "Bottlebrush", "Casuarina", "Indian Gooseberry", "Guava", "Fig", "Indian Almond", "Indian Coral Tree", "Papaya",
-    "Sapodilla", "Mulberry", "Litchi", "Avocado", "Alstonia", "Chikoo", "Putranjiva", "Chinaberry", "Custard Apple", "Rosewood",
-    "Cassia", "Kanchan", "Devil Tree", "Tendu", "Siris", "Chandan", "Bakul", "Shisham", "Pipal", "Mast Tree"
+    "Sapodilla", "Mulberry", "Litchi", "Avocado", "Alstonia", "Chikoo", "Putranjiva", "Chinaberry", "Rosewood", "Cassia",
+    "Kanchan", "Devil Tree", "Tendu", "Siris", "Chandan", "Shisham", "Pipal", "Mast Tree", "Indian Beech", "Gmelina"
 ]
 user_species = st.selectbox("Choose a Tree Species (India Only)", sorted(indian_tree_species))
+
+user_tree_name = st.text_input("Give a Nickname for Your Tree", "My Green Tree")
 years = st.slider("Select Number of Years", 1, 50, 20)
 num_trees = st.number_input("Number of Trees", min_value=1, value=10)
 
-# Get user-selected tree data
-user_data = df[df["common_name"] == user_species].iloc[0]
+# Check if selected species is in dataset
+species_df = df[df["common_name"].str.lower() == user_species.lower()]
+if species_df.empty:
+    st.error("This species is not available in your dataset. Please choose another one.")
+    st.stop()
+
+user_data = species_df.iloc[0]
 
 def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees):
     dbh = growth_rate * years
     biomass = 0.25 * (dbh ** 2) * years
     carbon = biomass * carbon_fraction
     co2 = carbon * 3.67
-    return (co2 * survival_rate * num_trees) / 1000  # in metric tons
+    return (co2 * survival_rate * num_trees) / 1000  # metric tons
 
 user_co2 = calculate_co2(
     user_data["avg_dbh_growth"], user_data["carbon_fraction"], user_data["survival_rate"], years, num_trees
@@ -48,12 +56,13 @@ user_co2 = calculate_co2(
 
 st.success(f"Estimated CO2 for {user_species}: {user_co2:.2f} metric tons over {years} years.")
 
-# AI Suggestion: Find best tree in city with higher CO2 than user tree
-ai_df = df[(df["city"] == city) & (df["common_name"] != user_species)].dropna(subset=["avg_dbh_growth", "carbon_fraction", "survival_rate"])
+# AI Suggestion (better tree only)
+ai_df = df[(df["city"] == city) & (df["common_name"].str.lower() != user_species.lower())].dropna(
+    subset=["avg_dbh_growth", "carbon_fraction", "survival_rate"]
+)
 ai_df["estimated_co2"] = ai_df.apply(lambda row: calculate_co2(
     row["avg_dbh_growth"], row["carbon_fraction"], row["survival_rate"], years, num_trees
 ), axis=1)
-
 ai_df = ai_df[ai_df["estimated_co2"] > user_co2]
 
 if not ai_df.empty:
@@ -66,7 +75,7 @@ else:
     ai_co2 = 0
     st.warning("No better species found by AI for this city.")
 
-# Bar Chart Comparison
+# Bar Chart
 def plot_chart(user_co2, ai_co2):
     fig, ax = plt.subplots()
     ax.bar(["User Tree", "AI Tree"], [user_co2, ai_co2], color=["green", "blue"])
@@ -81,7 +90,7 @@ def plot_chart(user_co2, ai_co2):
 chart_img = plot_chart(user_co2, ai_co2)
 st.image(chart_img, caption="User vs AI Tree CO2", use_container_width=True)
 
-# PDF Report Generator (no Unicode encoding issue)
+# PDF Generator (no Unicode issues)
 def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
@@ -100,17 +109,17 @@ def generate_pdf():
     else:
         pdf.cell(190, 10, f"No better AI suggestion available for this city.", ln=True)
 
+    # Add chart image
     image_path = "/tmp/temp_chart.png"
     with open(image_path, "wb") as f:
         f.write(chart_img.getbuffer())
     pdf.image(image_path, x=10, w=180)
     os.remove(image_path)
 
-    out_buffer = BytesIO()
-    out_buffer.write(pdf.output(dest='S'))  # No encode needed
-    out_buffer.seek(0)
-    return out_buffer
+    output_buffer = BytesIO()
+    output_buffer.write(pdf.output(dest='S'))
+    output_buffer.seek(0)
+    return output_buffer
 
-# Download Button
 pdf_data = generate_pdf()
 st.download_button("📄 Download Comparison Report", data=pdf_data, file_name="tree_comparison_report.pdf", mime="application/pdf")
