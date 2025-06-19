@@ -104,8 +104,10 @@ try:
         font_path_bold = os.path.join(current_dir, 'DejaVuSans-Bold.ttf')
 
         # Add DejaVuSans regular font
+        # Ensure DejaVuSans.ttf is in the same directory as your script
         pdf.add_font('DejaVuSans', '', font_path_regular, uni=True)
         # Add DejaVuSans bold font
+        # Ensure DejaVuSans-Bold.ttf is in the same directory as your script
         pdf.add_font('DejaVuSans', 'B', font_path_bold, uni=True)
 
         pdf.set_font("DejaVuSans", "B", 16) # Use DejaVuSans bold for titles
@@ -132,7 +134,8 @@ try:
         finally:
             os.remove(image_path) # Clean up the temporary file
         output = BytesIO()
-        output.write(pdf.output(dest="S").encode('latin1'))
+        # Corrected line: pdf.output(dest="S") already returns bytes (bytearray), no need to encode
+        output.write(pdf.output(dest="S"))
         output.seek(0)
         return output
 
