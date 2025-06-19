@@ -91,10 +91,12 @@ try:
     # PDF generation
     def generate_pdf():
         pdf = FPDF()
-        pdf.add_page()
-        pdf.set_font("Arial", "B", 16)
+        # Add a Unicode font (e.g., DejaVuSans)
+        # Ensure DejaVuSans.ttf is in the same directory as your script, or provide the full path
+        pdf.add_font('DejaVuSans', '', 'DejaVuSans.ttf', uni=True)
+        pdf.set_font("DejaVuSans", "B", 16) # Use DejaVuSans for bold titles
         pdf.cell(190, 10, "Tree CO₂ Comparison Report", ln=True, align='C')
-        pdf.set_font("Arial", "", 12)
+        pdf.set_font("DejaVuSans", "", 12) # Use DejaVuSans for regular text
         pdf.ln(10)
         pdf.cell(190, 10, f"📍 City: {city}", ln=True)
         pdf.cell(190, 10, f"🌿 Your Tree: {species} (Nickname: {nickname})", ln=True)
