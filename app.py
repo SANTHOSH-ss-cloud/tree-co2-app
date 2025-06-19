@@ -9,11 +9,11 @@ import os
 df = pd.read_csv("filtered_india_tree_data.csv")
 df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
-st.title("🌳 Tree CO₂ Sequestration Comparator")
+st.title("🌳 Tree CO2 Sequestration Comparator")
 
 # User Inputs
 city = st.selectbox("Select Your City", sorted(df["city"].dropna().unique()))
-user_tree_name = st.text_input("Give a Nickname for Your Tree 🌱", "My Green Tree")
+user_tree_name = st.text_input("Give a Nickname for Your Tree", "My Green Tree")
 user_species = st.selectbox("Choose a Tree Species", sorted(df["common_name"].dropna().unique()))
 years = st.slider("Select Number of Years", 1, 50, 20)
 num_trees = st.number_input("Number of Trees", min_value=1, value=10)
@@ -32,7 +32,7 @@ user_co2 = calculate_co2(
     user_data["avg_dbh_growth"], user_data["carbon_fraction"], user_data["survival_rate"], years, num_trees
 )
 
-st.success(f"🌱 Estimated CO₂ for {user_species}: **{user_co2:.2f} metric tons** over {years} years.")
+st.success(f"Estimated CO2 for {user_species}: {user_co2:.2f} metric tons over {years} years.")
 
 # AI Suggestion: Find best tree in city with higher CO2 than user tree
 ai_df = df[(df["city"] == city) & (df["common_name"] != user_species)].dropna(subset=["avg_dbh_growth", "carbon_fraction", "survival_rate"])
@@ -45,12 +45,12 @@ ai_df = ai_df[ai_df["estimated_co2"] > user_co2]
 if not ai_df.empty:
     ai_species = ai_df.sort_values(by="estimated_co2", ascending=False).iloc[0]
     ai_co2 = ai_species["estimated_co2"]
-    st.info(f"🤖 AI Suggests: {ai_species['common_name']} ({ai_species['scientific_name']})")
-    st.success(f"🤖 Estimated CO₂: **{ai_co2:.2f} metric tons**")
+    st.info(f"AI Suggests: {ai_species['common_name']} ({ai_species['scientific_name']})")
+    st.success(f"Estimated CO2: {ai_co2:.2f} metric tons")
 else:
     ai_species = None
     ai_co2 = 0
-    st.warning("🤖 No better species found by AI for this city.")
+    st.warning("No better species found by AI for this city.")
 
 # Bar Chart Comparison
 def plot_chart(user_co2, ai_co2):
@@ -65,9 +65,9 @@ def plot_chart(user_co2, ai_co2):
     return buffer
 
 chart_img = plot_chart(user_co2, ai_co2)
-st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
+st.image(chart_img, caption="User vs AI Tree CO2", use_container_width=True)
 
-# PDF Report Generator (no emojis or Unicode)
+# PDF Report Generator (no Unicode encoding issue)
 def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
@@ -93,7 +93,7 @@ def generate_pdf():
     os.remove(image_path)
 
     out_buffer = BytesIO()
-    out_buffer.write(pdf.output(dest='S').encode('latin1'))  # Ensures no Unicode errors
+    out_buffer.write(pdf.output(dest='S'))  # No encode needed
     out_buffer.seek(0)
     return out_buffer
 
