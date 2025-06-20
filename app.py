@@ -7,30 +7,22 @@ import os
 import tempfile
 
 try:
-    # Debug print
-    print(f"Current Directory: {os.getcwd()}")
-    print(f"Available Files: {os.listdir()}")
-
-    # Load data
+    # Load dataset
     df = pd.read_csv("strict_filtered_species_data.csv")
     df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
-    # Check required column
-    if "common_name" not in df.columns:
-        st.error("Missing 'common_name' column in dataset.")
-        st.stop()
-
-    required_cols = ["avg_dbh_growth", "carbon_fraction", "survival_rate"]
+    # Required columns check
+    required_cols = ["common_name", "avg_dbh_growth", "carbon_fraction", "survival_rate"]
     for col in required_cols:
         if col not in df.columns:
             st.error(f"Missing required column: {col}")
             st.stop()
 
-    df = df.dropna(subset=["common_name"] + required_cols)
+    df = df.dropna(subset=required_cols)
     indian_tree_species = sorted(df["common_name"].dropna().unique())
 
     if not indian_tree_species:
-        st.error("No valid species in dataset.")
+        st.error("No valid tree species found in the dataset.")
         st.stop()
 
     indian_cities = [
@@ -48,48 +40,47 @@ try:
     years = st.slider("⏳ Years to Estimate CO₂", 1, 50, 20)
     num_trees = st.number_input("🌲 Number of Trees", min_value=1, value=10)
 
+    # Fetch selected species data
     tree_data = df[df["common_name"] == species]
     if tree_data.empty:
-        st.error("Species data not found.")
+        st.error("Selected tree species not found in dataset.")
         st.stop()
-
     tree_data = tree_data.iloc[0]
 
+    # CO2 calculation
     def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees):
-        try:
-            dbh = max(0, growth_rate * years)
-            biomass = 0.25 * (dbh ** 2) * years
-            carbon = biomass * carbon_fraction
-            co2 = carbon * 3.67
-            return (co2 * survival_rate * num_trees) / 1000
-        except Exception as calc_err:
-            print(f"Error in CO2 calculation: {calc_err}")
-            return 0
+        dbh = max(0, growth_rate * years)
+        biomass = 0.25 * (dbh ** 2) * years
+        carbon = biomass * carbon_fraction
+        co2 = carbon * 3.67
+        return (co2 * survival_rate * num_trees) / 1000
 
     user_co2 = calculate_co2(tree_data["avg_dbh_growth"], tree_data["carbon_fraction"], tree_data["survival_rate"], years, num_trees)
     st.success(f"✅ Your Tree ({species}) will sequester: **{user_co2:.2f} metric tons** of CO₂ in {years} years.")
 
-    # AI Suggestion
+    # AI Recommendation (Safe)
     ai_df = df[df["common_name"] != species].copy()
     ai_df["estimated_co2"] = ai_df.apply(lambda row: calculate_co2(
         row["avg_dbh_growth"], row["carbon_fraction"], row["survival_rate"], years, num_trees), axis=1)
 
     better_ai = ai_df[ai_df["estimated_co2"] > user_co2]
-    if not better_ai.empty:
-        try:
-            ai_best = better_ai.sort_values("estimated_co2", ascending=False).iloc[0]
+
+    if better_ai.shape[0] == 0:
+        ai_species = None
+        ai_co2 = 0
+        st.warning("⚠️ No better tree found by AI.")
+    else:
+        sorted_ai = better_ai.sort_values("estimated_co2", ascending=False)
+        if sorted_ai.shape[0] >= 1:
+            ai_best = sorted_ai.iloc[0]
             ai_species = ai_best["common_name"]
             ai_co2 = ai_best["estimated_co2"]
             st.info(f"🤖 AI Suggests: {ai_species}")
             st.success(f"💡 AI Tree CO₂ Estimate: **{ai_co2:.2f} metric tons**")
-        except IndexError as e:
-            st.warning("⚠️ Unexpected error during AI suggestion.")
+        else:
             ai_species = None
             ai_co2 = 0
-    else:
-        ai_species = None
-        ai_co2 = 0
-        st.warning("⚠️ No better tree found by AI.")
+            st.warning("⚠️ AI recommendation failed to return any result.")
 
     # Chart
     def generate_chart(user_co2, ai_co2):
@@ -106,7 +97,7 @@ try:
     chart_img = generate_chart(user_co2, ai_co2)
     st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
 
-    # PDF generation
+    # PDF Report
     def generate_pdf():
         pdf = FPDF()
         pdf.add_page()
