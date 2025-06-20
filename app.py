@@ -58,7 +58,7 @@ try:
     user_co2 = calculate_co2(tree_data["avg_dbh_growth"], tree_data["carbon_fraction"], tree_data["survival_rate"], years, num_trees)
     st.success(f"✅ Your Tree ({species}) will sequester: **{user_co2:.2f} metric tons** of CO₂ in {years} years.")
 
-    # AI Recommendation (Safe)
+    # AI Recommendation
     ai_df = df[df["common_name"] != species].copy()
     ai_df["estimated_co2"] = ai_df.apply(lambda row: calculate_co2(
         row["avg_dbh_growth"], row["carbon_fraction"], row["survival_rate"], years, num_trees), axis=1)
@@ -97,25 +97,29 @@ try:
     chart_img = generate_chart(user_co2, ai_co2)
     st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
 
-    # PDF Report without custom fonts
+    # PDF Report with Unicode font
     def generate_pdf():
         pdf = FPDF()
         pdf.add_page()
 
-        pdf.set_font("Arial", "B", 16)
-        pdf.cell(190, 10, "Tree CO₂ Comparison Report", ln=True, align='C')
-        pdf.set_font("Arial", "", 12)
+        # Load DejaVuSans fonts
+        pdf.add_font('DejaVu', '', 'DejaVuSans.ttf', uni=True)
+        pdf.add_font('DejaVu', 'B', 'DejaVuSans-Bold.ttf', uni=True)
+
+        pdf.set_font("DejaVu", "B", 16)
+        pdf.cell(190, 10, "🌳 Tree CO₂ Comparison Report", ln=True, align='C')
+        pdf.set_font("DejaVu", "", 12)
         pdf.ln(10)
         pdf.cell(190, 10, f"📍 City: {city}", ln=True)
         pdf.cell(190, 10, f"🌿 Your Tree: {species} (Nickname: {nickname})", ln=True)
-        pdf.cell(190, 10, f"Years: {years}", ln=True)
-        pdf.cell(190, 10, f"Number of Trees: {num_trees}", ln=True)
-        pdf.cell(190, 10, f"Estimated CO₂: {user_co2:.2f} metric tons", ln=True)
+        pdf.cell(190, 10, f"⏳ Years: {years}", ln=True)
+        pdf.cell(190, 10, f"🌲 Number of Trees: {num_trees}", ln=True)
+        pdf.cell(190, 10, f"✅ Estimated CO₂: {user_co2:.2f} metric tons", ln=True)
         if ai_species:
             pdf.cell(190, 10, f"🤖 AI Tree: {ai_species}", ln=True)
-            pdf.cell(190, 10, f"AI CO₂ Estimate: {ai_co2:.2f} metric tons", ln=True)
+            pdf.cell(190, 10, f"💡 AI CO₂ Estimate: {ai_co2:.2f} metric tons", ln=True)
         else:
-            pdf.cell(190, 10, "No better tree recommended by AI.", ln=True)
+            pdf.cell(190, 10, "⚠️ No better tree recommended by AI.", ln=True)
 
         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_file:
             tmp_file.write(chart_img.getbuffer())
@@ -134,6 +138,6 @@ try:
     st.download_button("📄 Download Report as PDF", data=pdf_bytes, file_name="tree_comparison.pdf", mime="application/pdf")
 
 except FileNotFoundError:
-    st.error("Error: 'strict_filtered_species_data.csv' not found. Please ensure the CSV file is in the same directory.")
+    st.error("Error: 'strict_filtered_species_data.csv' not found.")
 except Exception as e:
     st.error(f"An unexpected error occurred: {e}. Please check your code and data.")
