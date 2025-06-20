@@ -7,28 +7,31 @@ import os
 import tempfile
 
 try:
-    # Print current working directory for debugging font paths
+    # Debugging
     print(f"Current Working Directory: {os.getcwd()}")
     print(f"Files in current directory: {os.listdir(os.getcwd())}")
 
-    # Load filtered dataset
+    # Load dataset
     df = pd.read_csv("strict_filtered_species_data.csv")
     df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
-    # Check if 'common_name' column exists after cleaning
+    # Ensure required column exists
     if "common_name" not in df.columns:
         st.error("Error: 'common_name' column not found in the dataset after processing. Please check your CSV file.")
         st.stop()
 
-    # 30 major Indian cities
+    # Drop NaN and get unique species
+    indian_tree_species = sorted(df["common_name"].dropna().unique())
+    if not indian_tree_species:
+        st.error("No valid tree species found in the dataset. Please check the 'common_name' column in your CSV.")
+        st.stop()
+
+    # Indian cities
     indian_cities = [
         "Delhi", "Mumbai", "Bengaluru", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Pune", "Jaipur", "Lucknow",
         "Kanpur", "Nagpur", "Indore", "Bhopal", "Patna", "Vadodara", "Ludhiana", "Agra", "Nashik", "Faridabad",
         "Meerut", "Rajkot", "Kalyan", "Vasai", "Varanasi", "Srinagar", "Ranchi", "Amritsar", "Jodhpur", "Coimbatore"
     ]
-
-    # Dynamically get tree species from your CSV
-    indian_tree_species = sorted(df["common_name"].unique())
 
     # UI
     st.title("🌳 Tree CO₂ Sequestration Comparator (India)")
@@ -39,7 +42,7 @@ try:
     years = st.slider("⏳ Years to Estimate CO₂", 1, 50, 20)
     num_trees = st.number_input("🌲 Number of Trees", min_value=1, value=10)
 
-    # Fetch species data
+    # Fetch selected species data
     tree_data = df[df["common_name"] == species]
     if tree_data.empty:
         st.error("Selected tree species not found in dataset. Please select a valid species.")
@@ -48,13 +51,11 @@ try:
 
     # CO2 calculation
     def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees):
-        # Ensure non-negative growth rate for DBH calculation
         dbh = max(0, growth_rate * years)
-        # Ensure non-negative biomass calculation
         biomass = 0.25 * (dbh ** 2) * years
         carbon = biomass * carbon_fraction
         co2 = carbon * 3.67
-        return (co2 * survival_rate * num_trees) / 1000  # metric tons
+        return (co2 * survival_rate * num_trees) / 1000
 
     user_co2 = calculate_co2(tree_data["avg_dbh_growth"], tree_data["carbon_fraction"], tree_data["survival_rate"], years, num_trees)
     st.success(f"✅ Your Tree ({species}) will sequester: **{user_co2:.2f} metric tons** of CO₂ in {years} years.")
@@ -92,27 +93,21 @@ try:
     chart_img = generate_chart(user_co2, ai_co2)
     st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
 
-    # PDF generation
+    # PDF Report
     def generate_pdf():
         pdf = FPDF()
-        # Add a page immediately after creating the PDF object
         pdf.add_page()
 
-        # Define absolute paths for font files
         current_dir = os.getcwd()
         font_path_regular = os.path.join(current_dir, 'DejaVuSans.ttf')
         font_path_bold = os.path.join(current_dir, 'DejaVuSans-Bold.ttf')
 
-        # Add DejaVuSans regular font for Unicode support
-        # Ensure DejaVuSans.ttf is in the same directory as your script
         pdf.add_font('DejaVuSans', '', font_path_regular, uni=True)
-        # Add DejaVuSans bold font for Unicode support
-        # Ensure DejaVuSans-Bold.ttf is in the same directory as your script
         pdf.add_font('DejaVuSans', 'B', font_path_bold, uni=True)
 
-        pdf.set_font("DejaVuSans", "B", 16) # Use DejaVuSans bold for titles
+        pdf.set_font("DejaVuSans", "B", 16)
         pdf.cell(190, 10, "Tree CO₂ Comparison Report", ln=True, align='C')
-        pdf.set_font("DejaVuSans", "", 12) # Use DejaVuSans regular for text
+        pdf.set_font("DejaVuSans", "", 12)
         pdf.ln(10)
         pdf.cell(190, 10, f"📍 City: {city}", ln=True)
         pdf.cell(190, 10, f"🌿 Your Tree: {species} (Nickname: {nickname})", ln=True)
@@ -125,16 +120,15 @@ try:
         else:
             pdf.cell(190, 10, "No better tree recommended by AI.", ln=True)
 
-        # Add chart image using tempfile for robustness
         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_file:
             tmp_file.write(chart_img.getbuffer())
             image_path = tmp_file.name
         try:
             pdf.image(image_path, x=10, w=180)
         finally:
-            os.remove(image_path) # Clean up the temporary file
+            os.remove(image_path)
+
         output = BytesIO()
-        # pdf.output(dest="S") returns bytes (bytearray), no need to encode
         output.write(pdf.output(dest="S"))
         output.seek(0)
         return output
