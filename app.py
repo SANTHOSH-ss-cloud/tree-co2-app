@@ -97,20 +97,14 @@ try:
     chart_img = generate_chart(user_co2, ai_co2)
     st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
 
-    # PDF Report
+    # PDF Report without custom fonts
     def generate_pdf():
         pdf = FPDF()
         pdf.add_page()
 
-        font_path_regular = os.path.join(os.getcwd(), 'DejaVuSans.ttf')
-        font_path_bold = os.path.join(os.getcwd(), 'DejaVuSans-Bold.ttf')
-
-        pdf.add_font('DejaVuSans', '', font_path_regular, uni=True)
-        pdf.add_font('DejaVuSans', 'B', font_path_bold, uni=True)
-
-        pdf.set_font("DejaVuSans", "B", 16)
+        pdf.set_font("Arial", "B", 16)
         pdf.cell(190, 10, "Tree CO₂ Comparison Report", ln=True, align='C')
-        pdf.set_font("DejaVuSans", "", 12)
+        pdf.set_font("Arial", "", 12)
         pdf.ln(10)
         pdf.cell(190, 10, f"📍 City: {city}", ln=True)
         pdf.cell(190, 10, f"🌿 Your Tree: {species} (Nickname: {nickname})", ln=True)
