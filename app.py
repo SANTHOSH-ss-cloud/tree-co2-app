@@ -7,26 +7,32 @@ import os
 import tempfile
 
 try:
-    # Debugging
-    print(f"Current Working Directory: {os.getcwd()}")
-    print(f"Files in current directory: {os.listdir(os.getcwd())}")
+    # Debug print
+    print(f"Current Directory: {os.getcwd()}")
+    print(f"Available Files: {os.listdir()}")
 
-    # Load dataset
+    # Load data
     df = pd.read_csv("strict_filtered_species_data.csv")
     df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
-    # Ensure required column exists
+    # Check required column
     if "common_name" not in df.columns:
-        st.error("Error: 'common_name' column not found in the dataset after processing. Please check your CSV file.")
+        st.error("Missing 'common_name' column in dataset.")
         st.stop()
 
-    # Drop NaN and get unique species
+    required_cols = ["avg_dbh_growth", "carbon_fraction", "survival_rate"]
+    for col in required_cols:
+        if col not in df.columns:
+            st.error(f"Missing required column: {col}")
+            st.stop()
+
+    df = df.dropna(subset=["common_name"] + required_cols)
     indian_tree_species = sorted(df["common_name"].dropna().unique())
+
     if not indian_tree_species:
-        st.error("No valid tree species found in the dataset. Please check the 'common_name' column in your CSV.")
+        st.error("No valid species in dataset.")
         st.stop()
 
-    # Indian cities
     indian_cities = [
         "Delhi", "Mumbai", "Bengaluru", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Pune", "Jaipur", "Lucknow",
         "Kanpur", "Nagpur", "Indore", "Bhopal", "Patna", "Vadodara", "Ludhiana", "Agra", "Nashik", "Faridabad",
@@ -42,37 +48,44 @@ try:
     years = st.slider("⏳ Years to Estimate CO₂", 1, 50, 20)
     num_trees = st.number_input("🌲 Number of Trees", min_value=1, value=10)
 
-    # Fetch selected species data
     tree_data = df[df["common_name"] == species]
     if tree_data.empty:
-        st.error("Selected tree species not found in dataset. Please select a valid species.")
+        st.error("Species data not found.")
         st.stop()
+
     tree_data = tree_data.iloc[0]
 
-    # CO2 calculation
     def calculate_co2(growth_rate, carbon_fraction, survival_rate, years, num_trees):
-        dbh = max(0, growth_rate * years)
-        biomass = 0.25 * (dbh ** 2) * years
-        carbon = biomass * carbon_fraction
-        co2 = carbon * 3.67
-        return (co2 * survival_rate * num_trees) / 1000
+        try:
+            dbh = max(0, growth_rate * years)
+            biomass = 0.25 * (dbh ** 2) * years
+            carbon = biomass * carbon_fraction
+            co2 = carbon * 3.67
+            return (co2 * survival_rate * num_trees) / 1000
+        except Exception as calc_err:
+            print(f"Error in CO2 calculation: {calc_err}")
+            return 0
 
     user_co2 = calculate_co2(tree_data["avg_dbh_growth"], tree_data["carbon_fraction"], tree_data["survival_rate"], years, num_trees)
     st.success(f"✅ Your Tree ({species}) will sequester: **{user_co2:.2f} metric tons** of CO₂ in {years} years.")
 
-    # AI Recommendation
+    # AI Suggestion
     ai_df = df[df["common_name"] != species].copy()
     ai_df["estimated_co2"] = ai_df.apply(lambda row: calculate_co2(
         row["avg_dbh_growth"], row["carbon_fraction"], row["survival_rate"], years, num_trees), axis=1)
 
     better_ai = ai_df[ai_df["estimated_co2"] > user_co2]
-
     if not better_ai.empty:
-        ai_best = better_ai.sort_values("estimated_co2", ascending=False).iloc[0]
-        ai_species = ai_best["common_name"]
-        ai_co2 = ai_best["estimated_co2"]
-        st.info(f"🤖 AI Suggests: {ai_species}")
-        st.success(f"💡 AI Tree CO₂ Estimate: **{ai_co2:.2f} metric tons**")
+        try:
+            ai_best = better_ai.sort_values("estimated_co2", ascending=False).iloc[0]
+            ai_species = ai_best["common_name"]
+            ai_co2 = ai_best["estimated_co2"]
+            st.info(f"🤖 AI Suggests: {ai_species}")
+            st.success(f"💡 AI Tree CO₂ Estimate: **{ai_co2:.2f} metric tons**")
+        except IndexError as e:
+            st.warning("⚠️ Unexpected error during AI suggestion.")
+            ai_species = None
+            ai_co2 = 0
     else:
         ai_species = None
         ai_co2 = 0
@@ -93,14 +106,13 @@ try:
     chart_img = generate_chart(user_co2, ai_co2)
     st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
 
-    # PDF Report
+    # PDF generation
     def generate_pdf():
         pdf = FPDF()
         pdf.add_page()
 
-        current_dir = os.getcwd()
-        font_path_regular = os.path.join(current_dir, 'DejaVuSans.ttf')
-        font_path_bold = os.path.join(current_dir, 'DejaVuSans-Bold.ttf')
+        font_path_regular = os.path.join(os.getcwd(), 'DejaVuSans.ttf')
+        font_path_bold = os.path.join(os.getcwd(), 'DejaVuSans-Bold.ttf')
 
         pdf.add_font('DejaVuSans', '', font_path_regular, uni=True)
         pdf.add_font('DejaVuSans', 'B', font_path_bold, uni=True)
@@ -133,11 +145,10 @@ try:
         output.seek(0)
         return output
 
-    # Download button
     pdf_bytes = generate_pdf()
     st.download_button("📄 Download Report as PDF", data=pdf_bytes, file_name="tree_comparison.pdf", mime="application/pdf")
 
 except FileNotFoundError:
-    st.error("Error: 'strict_filtered_species_data.csv' not found. Please ensure the CSV file is in the same directory as the Streamlit app.")
+    st.error("Error: 'strict_filtered_species_data.csv' not found. Please ensure the CSV file is in the same directory.")
 except Exception as e:
     st.error(f"An unexpected error occurred: {e}. Please check your code and data.")
