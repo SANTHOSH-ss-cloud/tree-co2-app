@@ -32,13 +32,13 @@ try:
     ]
 
     # UI
-    st.title("🌳 Tree CO₂ Sequestration Comparator (India)")
+    st.title("Tree CO2 Sequestration Comparator (India)")
 
-    city = st.selectbox("📍 Select Your City (India Only)", indian_cities)
-    species = st.selectbox("🌱 Choose a Tree Species (India Only)", indian_tree_species)
+    city = st.selectbox("Select Your City (India Only)", indian_cities)
+    species = st.selectbox("Choose a Tree Species (India Only)", indian_tree_species)
     nickname = st.text_input("Give a Nickname to Your Tree", "My Tree")
-    years = st.slider("⏳ Years to Estimate CO₂", 1, 50, 20)
-    num_trees = st.number_input("🌲 Number of Trees", min_value=1, value=10)
+    years = st.slider("Years to Estimate CO2", 1, 50, 20)
+    num_trees = st.number_input("Number of Trees", min_value=1, value=10)
 
     # Fetch selected species data
     tree_data = df[df["common_name"] == species]
@@ -56,7 +56,7 @@ try:
         return (co2 * survival_rate * num_trees) / 1000
 
     user_co2 = calculate_co2(tree_data["avg_dbh_growth"], tree_data["carbon_fraction"], tree_data["survival_rate"], years, num_trees)
-    st.success(f"✅ Your Tree ({species}) will sequester: **{user_co2:.2f} metric tons** of CO₂ in {years} years.")
+    st.success(f"Your Tree ({species}) will sequester: {user_co2:.2f} metric tons of CO2 in {years} years.")
 
     # AI Recommendation
     ai_df = df[df["common_name"] != species].copy()
@@ -68,26 +68,26 @@ try:
     if better_ai.shape[0] == 0:
         ai_species = None
         ai_co2 = 0
-        st.warning("⚠️ No better tree found by AI.")
+        st.warning("No better tree found by AI.")
     else:
         sorted_ai = better_ai.sort_values("estimated_co2", ascending=False)
         if sorted_ai.shape[0] >= 1:
             ai_best = sorted_ai.iloc[0]
             ai_species = ai_best["common_name"]
             ai_co2 = ai_best["estimated_co2"]
-            st.info(f"🤖 AI Suggests: {ai_species}")
-            st.success(f"💡 AI Tree CO₂ Estimate: **{ai_co2:.2f} metric tons**")
+            st.info(f"AI Suggests: {ai_species}")
+            st.success(f"AI Tree CO2 Estimate: {ai_co2:.2f} metric tons")
         else:
             ai_species = None
             ai_co2 = 0
-            st.warning("⚠️ AI recommendation failed to return any result.")
+            st.warning("AI recommendation failed to return any result.")
 
     # Chart
     def generate_chart(user_co2, ai_co2):
         fig, ax = plt.subplots()
         ax.bar(["Your Tree", "AI Tree"], [user_co2, ai_co2], color=["green", "blue"])
-        ax.set_ylabel("CO₂ Sequestered (metric tons)")
-        ax.set_title("User vs AI Tree CO₂ Comparison")
+        ax.set_ylabel("CO2 Sequestered (metric tons)")
+        ax.set_title("User vs AI Tree CO2 Comparison")
         buf = BytesIO()
         fig.savefig(buf, format='png')
         buf.seek(0)
@@ -95,31 +95,27 @@ try:
         return buf
 
     chart_img = generate_chart(user_co2, ai_co2)
-    st.image(chart_img, caption="User vs AI Tree CO₂", use_container_width=True)
+    st.image(chart_img, caption="User vs AI Tree CO2", use_container_width=True)
 
-    # PDF Report with Unicode font
+    # PDF Report using only safe fonts
     def generate_pdf():
         pdf = FPDF()
         pdf.add_page()
 
-        # Load DejaVuSans fonts
-        pdf.add_font('DejaVu', '', 'DejaVuSans.ttf', uni=True)
-        pdf.add_font('DejaVu', 'B', 'DejaVuSans-Bold.ttf', uni=True)
-
-        pdf.set_font("DejaVu", "B", 16)
-        pdf.cell(190, 10, "🌳 Tree CO₂ Comparison Report", ln=True, align='C')
-        pdf.set_font("DejaVu", "", 12)
+        pdf.set_font("Arial", "B", 16)
+        pdf.cell(190, 10, "Tree CO2 Comparison Report", ln=True, align='C')
+        pdf.set_font("Arial", "", 12)
         pdf.ln(10)
-        pdf.cell(190, 10, f"📍 City: {city}", ln=True)
-        pdf.cell(190, 10, f"🌿 Your Tree: {species} (Nickname: {nickname})", ln=True)
-        pdf.cell(190, 10, f"⏳ Years: {years}", ln=True)
-        pdf.cell(190, 10, f"🌲 Number of Trees: {num_trees}", ln=True)
-        pdf.cell(190, 10, f"✅ Estimated CO₂: {user_co2:.2f} metric tons", ln=True)
+        pdf.cell(190, 10, f"City: {city}", ln=True)
+        pdf.cell(190, 10, f"Your Tree: {species} (Nickname: {nickname})", ln=True)
+        pdf.cell(190, 10, f"Years: {years}", ln=True)
+        pdf.cell(190, 10, f"Number of Trees: {num_trees}", ln=True)
+        pdf.cell(190, 10, f"Estimated CO2: {user_co2:.2f} metric tons", ln=True)
         if ai_species:
-            pdf.cell(190, 10, f"🤖 AI Tree: {ai_species}", ln=True)
-            pdf.cell(190, 10, f"💡 AI CO₂ Estimate: {ai_co2:.2f} metric tons", ln=True)
+            pdf.cell(190, 10, f"AI Tree: {ai_species}", ln=True)
+            pdf.cell(190, 10, f"AI CO2 Estimate: {ai_co2:.2f} metric tons", ln=True)
         else:
-            pdf.cell(190, 10, "⚠️ No better tree recommended by AI.", ln=True)
+            pdf.cell(190, 10, "No better tree recommended by AI.", ln=True)
 
         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_file:
             tmp_file.write(chart_img.getbuffer())
@@ -135,7 +131,7 @@ try:
         return output
 
     pdf_bytes = generate_pdf()
-    st.download_button("📄 Download Report as PDF", data=pdf_bytes, file_name="tree_comparison.pdf", mime="application/pdf")
+    st.download_button("Download Report as PDF", data=pdf_bytes, file_name="tree_comparison.pdf", mime="application/pdf")
 
 except FileNotFoundError:
     st.error("Error: 'strict_filtered_species_data.csv' not found.")
