@@ -125,7 +125,10 @@ try:
         finally:
             os.remove(image_path)
         output = BytesIO()
-        output.write(pdf.output(dest="S").encode("latin1"))
+        raw_pdf = pdf.output(dest="S")
+        print(type(raw_pdf))  # Should show <class 'str'>
+        output.write(raw_pdf.encode("latin1"))
+
         output.seek(0)
         return output
 
