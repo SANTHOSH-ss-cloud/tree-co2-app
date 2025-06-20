@@ -124,11 +124,11 @@ try:
             pdf.image(image_path, x=10, w=180)
         finally:
             os.remove(image_path)
-
         output = BytesIO()
-        output.write(pdf.output(dest="S"))
+        output.write(pdf.output(dest="S").encode("latin1"))  # Fix: encode to bytes
         output.seek(0)
         return output
+
 
     pdf_bytes = generate_pdf()
     st.download_button("Download Report as PDF", data=pdf_bytes, file_name="tree_comparison.pdf", mime="application/pdf")
