@@ -32,7 +32,7 @@ try:
     city = st.selectbox("📍 Select Your City", indian_cities)
     species = st.selectbox("🌱 Choose a Tree Species", indian_tree_species)
     nickname = st.text_input("Give a Nickname to Your Tree", "My Tree")
-    years = st.slider("⏳ Years to Estimate CO₂", 1, 50, 20)
+    years = st.slider("⏳ Years to Estimate CO₂", 1, 50, 15)
     num_trees = st.number_input("🌲 Number of Trees", min_value=1, value=10)
 
     # Get tree data
