@@ -117,7 +117,7 @@ try:
             os.remove(image_path)
 
         output = BytesIO()
-        output.write(pdf.output(dest="S").encode("latin1"))  # ✅ Fix: encode to bytes
+        output.write(pdf.output(dest="S"))  # no .encode()
         output.seek(0)
         return output
 
